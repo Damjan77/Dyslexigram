@@ -4,6 +4,7 @@
 }
 body{
     font-family: DyslexicFZF, sans-serif;
+    color: white;
 }
 .container{
     background-image: url('/images/background.jpg');
@@ -15,14 +16,38 @@ body{
     width: 100%;
     padding-top: 5%;
 }
-#morebutton{
-    background: url('/images/btn.png') no-repeat;
-    background-size: cover;
-    height: 100px;
+button {
+    /* Variables */
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 17px;
+    font-weight: bold;
     border: none;
-    margin-top: 5px;
-    text-align: left;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
 }
+
+.button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+}
+
+button:hover .button_top {
+    transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+    transform: translateY(0);
+}
+
 .img-fluid{
     height: 90%;
 }
