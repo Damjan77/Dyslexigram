@@ -2,9 +2,11 @@ package com.example.dyslexigram.model;
 
 import com.example.dyslexigram.model.enumerations.Level;
 import jakarta.persistence.*;
+import lombok.Data;
 
 
 @Entity
+@Data
 public class Game {
     @Id
     @GeneratedValue
@@ -22,10 +24,11 @@ public class Game {
 
     }
 
-    public Game(String title, String description, Level level, String img_url) {
+    public Game(String title, String description, Level level, String img_url, Question question) {
         this.title = title;
         Description = description;
         this.level = level;
         this.img_url = img_url;
+        this.question = question;
     }
 }
