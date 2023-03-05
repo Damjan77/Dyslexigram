@@ -1,8 +1,9 @@
 package com.example.dyslexigram.model;
 
 import com.example.dyslexigram.model.enumerations.Level;
-import jakarta.persistence.*;
 import lombok.Data;
+
+import javax.persistence.*;
 
 @Entity
 @Data

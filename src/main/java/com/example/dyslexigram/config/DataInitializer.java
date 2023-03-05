@@ -1,16 +1,16 @@
 package com.example.dyslexigram.config;
 
 import com.example.dyslexigram.model.Game;
-import com.example.dyslexigram.model.Response;
 import com.example.dyslexigram.model.Question;
+import com.example.dyslexigram.model.Response;
 import com.example.dyslexigram.model.enumerations.Level;
 import com.example.dyslexigram.repository.GameRepository;
 import com.example.dyslexigram.repository.QuestionRepository;
 import com.example.dyslexigram.repository.ResponseRepository;
-import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,9 +36,9 @@ public class DataInitializer {
         responseRepository.save(correctAnswer);
         List<Response> responses = new ArrayList<>();
         responses.add(correctAnswer);
-        Question question = new Question("text","audioo",responses,correctAnswer);
+        Question question = new Question("text","audio",responses,correctAnswer);
         questionRepository.save(question);
-        Game game = new Game("title","desctiption",level,"img_url",question);
+        Game game = new Game("title","description",level,"img_url",question);
 
         this.gameRepository.save(game);
     }

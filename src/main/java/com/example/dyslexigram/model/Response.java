@@ -1,9 +1,6 @@
 package com.example.dyslexigram.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
+import javax.persistence.*;
 
 @Entity
 public class Response {
