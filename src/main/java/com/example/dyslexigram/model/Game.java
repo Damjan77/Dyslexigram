@@ -4,7 +4,6 @@ import com.example.dyslexigram.model.enumerations.Level;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
 @Entity
 @Data
 public class Game {
