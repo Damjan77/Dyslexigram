@@ -1,7 +1,9 @@
 package com.example.dyslexigram.repository;
 
-import com.example.dyslexigram.model.User;
+import com.example.dyslexigram.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends JpaRepository<User,Long> {
+@Repository
+public interface UserRepository extends JpaRepository<Users,Long> {
 }

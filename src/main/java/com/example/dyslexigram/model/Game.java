@@ -8,12 +8,14 @@ import lombok.Data;
 @Entity
 @Data
 public class Game {
+
     @Id
     @GeneratedValue
     private Long id;
+
     private String title;
     private String Description;
-    @Enumerated
+    @Enumerated(value = EnumType.STRING)
     private Level level;
     private String img_url;
 

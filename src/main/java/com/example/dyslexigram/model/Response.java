@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-import java.util.List;
 
 @Entity
 public class Response {
@@ -12,6 +11,7 @@ public class Response {
     @Id
     @GeneratedValue
     Long id;
+
     String text;
 
 
