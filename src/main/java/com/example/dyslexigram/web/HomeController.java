@@ -12,4 +12,9 @@ public class HomeController {
     public String getHomePage() {
         return "home.html";
     }
+
+    @GetMapping( "/info")
+    public String getInfoPage() {
+        return "info";
+    }
 }

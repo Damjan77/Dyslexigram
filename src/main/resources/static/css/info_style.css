@@ -1,0 +1,48 @@
+body{
+    font-family: DyslexicFZF, sans-serif;
+    color: white;
+}
+
+#banner {
+    background-image: linear-gradient(to right top, #6d1167, #750082, #7500a1, #6a00c4, #4412eb);
+    height: 100vh;
+}
+
+#info_section {
+    background-color: white;
+    margin-bottom: 50px;
+    height: 500px;
+    width: 300px;
+    border-radius: 15px;
+    opacity: 0.7;
+
+}
+
+.info_text {
+    color: black;
+    text-align: justify;
+    font-size: 20px;
+    font-family: Calibri, sans-serif;
+}
+
+.info_header {
+    font-size: 40px;
+}
+
+.first_header {
+    color: #7500a1;
+}
+
+.second_header {
+    color: #4412eb;
+}
+
+.info_section {
+    background-color: whitesmoke;
+    opacity: 0.9;
+    border-radius: 30px;
+}
+
+img {
+    width: 200px;
+}
