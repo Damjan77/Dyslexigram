@@ -42,7 +42,9 @@ body{
     opacity: 0.9;
     border-radius: 30px;
 }
-
 img {
     width: 200px;
+}
+.col{
+    color: #6d1167;
 }
