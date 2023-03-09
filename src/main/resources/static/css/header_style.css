@@ -1,0 +1,27 @@
+.navbar {
+    background-image: linear-gradient(to right, #6a00c4, #7500a1);
+    border-radius: 15px;
+}
+
+.navbar-brand, .nav-link, .navbar-toggler, .navbar-toggler-icon {
+    color: white !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header {
+    /*background-image: linear-gradient(to right,  #6d1167, #7500a1, #6a00c4, #4412eb);*/
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+div li {
+    float: right !important;
+}
+
+#logo_image{
+    width: 400px;
+    height: 60px;
+}
+
+
