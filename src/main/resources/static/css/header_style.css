@@ -1,27 +1,21 @@
+header {
+
+}
 .navbar {
-    background-image: linear-gradient(to right, #6a00c4, #7500a1);
-    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
 }
 
-.navbar-brand, .nav-link, .navbar-toggler, .navbar-toggler-icon {
-    color: white !important;
+.nav-link, .navbar-toggler, .navbar-toggler-icon, .bi {
     text-decoration: none;
     font-weight: bold;
 }
-
-header {
-    /*background-image: linear-gradient(to right,  #6d1167, #7500a1, #6a00c4, #4412eb);*/
-    padding-top:10px;
-    padding-bottom:10px;
-}
-
-div li {
-    float: right !important;
-}
-
 #logo_image{
-    width: 400px;
-    height: 60px;
+    width: 40%;
+}
+#search_form{
+    /*border-radius: 0;*/
+    background-color: transparent;
 }
 
 

@@ -13,83 +13,49 @@
 <body>
 
 <header th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
-    <!-- Static navbar -->
-<!--    <nav class="navbar navbar-default">-->
-<!--        <div class="container-fluid">-->
-<!--            <div class="navbar-header">-->
-<!--                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"-->
-<!--                        aria-expanded="false" aria-controls="navbar">-->
-<!--                    <span class="sr-only">Toggle navigation</span>-->
-<!--                    <span class="icon-bar"></span>-->
-<!--                    <span class="icon-bar"></span>-->
-<!--                    <span class="icon-bar"></span>-->
-<!--                </button>-->
-<!--                <a class="navbar-brand" href="#">Project name</a>-->
-<!--            </div>-->
-<!--            <div id="navbar" class="navbar-collapse collapse">-->
-<!--                <ul class="nav navbar-nav">-->
-<!--                    <li class="active"><a href="#">Home</a></li>-->
-<!--                    <li><a href="#">About</a></li>-->
-<!--                </ul>-->
+    <nav class="navbar navbar-fixed-top navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/home">
+                <img class="img-fluid" id="logo_image" src="../images/logo.png">
+            </a>
 
-<!--                <ul class="nav navbar-nav navbar-right">-->
-<!--                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>-->
-<!--                    <li><a href="../navbar-static-top/">Static top</a></li>-->
-<!--                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>-->
-<!--                </ul>-->
-<!--            </div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
-<!--        </div>&lt;!&ndash;/.container-fluid &ndash;&gt;-->
-<!--    </nav>-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbaricons"
+                    aria-controls="navbaricons" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-            <img id="logo_image" src="../images/logo.png">
-        </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbaricons">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item active m-auto">
+                        <a class="nav-link active" href="/home"><h2><i class="bi bi-house"></i></h2></a>
+                    </li>
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" href="/games"><h2><i class="bi bi-controller"></i></h2></a>
+                    </li>
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" href="/info"><h2><i class="bi bi-info-circle"></i></h2></a>
+                    </li>
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" href="/profile"><h2><i class="bi bi-person-circle"></i></h2></a>
+                    </li>
+                </ul>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                        <h1><i class="bi bi-house"></i></h1>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <h1><i class="bi bi-controller"></i></h1>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">
-                        <h1><i class="bi bi-info-circle"></i></h1>
-                    </a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">
-                        <h1><i class="bi bi-person"></i></h1>
-                    </a>
-                </li>
-            </ul>
-
-            <form class="form-inline">
-                <div class="input-group">
-
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-</svg>
-                        </span>
+                <form class="d-flex my-2 my-lg-0 w-auto" id="search_form">
+                    <div class="input-group input-group-sm">
+                        <input type="search" class="form-control rounded" aria-label="Search" placeholder="Search...">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-secondary btn-number">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </nav>
 </header>
 
 </body>
 </html>
+

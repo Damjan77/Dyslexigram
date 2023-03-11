@@ -3,15 +3,14 @@
     padding: 0;
 }
 body{
+    background-image: linear-gradient(to right top, #6d1167, #750082, #7500a1, #6a00c4, #4412eb);
     font-family: DyslexicFZF, sans-serif;
     color: white;
 }
 .container{
     width: 100%;
 }
-
 #banner{
-    background-image: linear-gradient(to right top, #6d1167, #750082, #7500a1, #6a00c4, #4412eb);
     width: 100%;
     padding-top: 5%;
 }
@@ -66,7 +65,7 @@ button:active .button_top {
     transition: all 0.25s cubic-bezier(0.55, 0.01, 0.35, 1.5);
 }
 
-form {
+form{
     position: relative;
     display: inline-block;
     max-width: 700px;
