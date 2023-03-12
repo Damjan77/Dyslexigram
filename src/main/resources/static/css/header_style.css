@@ -1,5 +1,12 @@
-header {
-
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: linear-gradient(to right top, #6d1167, #750082, #7500a1, #6a00c4, #4412eb);
+    min-height: 100%;
+    font-family: DyslexicFZF, sans-serif;
+    color: white;
 }
 .navbar {
     background: rgba(0, 0, 0, 0.6);
@@ -13,8 +20,7 @@ header {
 #logo_image{
     width: 40%;
 }
-#search_form{
-    /*border-radius: 0;*/
+form#search_form{
     background-color: transparent;
 }
 

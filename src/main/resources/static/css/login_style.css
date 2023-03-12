@@ -1,11 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 body{
-    background-image: linear-gradient(to right top, #6d1167, #750082, #7500a1, #6a00c4, #4412eb);
-    font-family: DyslexicFZF, sans-serif;
-    color: white;
+    background-repeat: no-repeat;
 }
 .container{
     width: 100%;
@@ -65,7 +59,7 @@ button:active .button_top {
     transition: all 0.25s cubic-bezier(0.55, 0.01, 0.35, 1.5);
 }
 
-form{
+form#log{
     position: relative;
     display: inline-block;
     max-width: 700px;
@@ -81,14 +75,14 @@ form{
     -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
 }
-form h1 {
+form#log h1 {
     color: #6d1167;
     font-weight: 100;
     letter-spacing: 0.01em;
     margin-left: 15px;
     margin-bottom: 35px;
 }
-form button {
+form#log button {
     margin-top: 30px;
     background-color: white;
     border: 1px solid #6d1167;
@@ -104,20 +98,20 @@ form button {
     position: relative;
     z-index: 1;
 }
-form button:hover, form button:focus {
+form#log button:hover, form button:focus {
     color: white;
     background-color: #6d1167;
     outline: none;
 }
-form .fancy-input {
+form#log .fancy-input {
     position: relative;
     padding: 10px 0;
     margin-top: 10px;
 }
-form .fancy-input:first-of-type {
+form#log .fancy-input:first-of-type {
     padding-top: 1rem;
 }
-form .fancy-input label {
+form#log .fancy-input label {
     transform-origin: left center;
     color: #6d1167;
     font-weight: 100;
@@ -131,7 +125,7 @@ form .fancy-input label {
     z-index: 2;
     pointer-events: none;
 }
-form .fancy-input input[type="text"] {
+form#log .fancy-input input[type="text"] {
     appearance: none;
     background-color: white;
     border: 1px solid #6d1167;
@@ -148,22 +142,22 @@ form .fancy-input input[type="text"] {
     position: relative;
     z-index: 1;
 }
-form .fancy-input input[type="text"]:focus {
+form#log .fancy-input input[type="text"]:focus {
     outline: none;
     background: #6d1167;
     color: white;
     margin-top: 20px;
 }
-form .fancy-input input[type="text"]:valid {
+form#log .fancy-input input[type="text"]:valid {
     margin-top: 10px;
 }
-form .fancy-input input[type="text"]:focus ~ label {
+form#log .fancy-input input[type="text"]:focus ~ label {
     -moz-transform: translate(0, -35px);
     -ms-transform: translate(0, -35px);
     -webkit-transform: translate(0, -35px);
     transform: translate(0, -50px);
 }
-form .fancy-input input[type="text"]:valid ~ label {
+form#log .fancy-input input[type="text"]:valid ~ label {
     -moz-transform: translate(5px, -35px) scale(0.6);
     -ms-transform: translate(5px, -35px) scale(0.6);
     -webkit-transform: translate(5px, -35px) scale(0.6);
