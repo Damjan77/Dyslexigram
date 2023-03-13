@@ -26,17 +26,17 @@
 
             <div class="collapse navbar-collapse justify-content-end" id="navbaricons">
                 <ul class="navbar-nav m-auto">
-                    <li class="nav-item active m-auto">
-                        <a class="nav-link active" href="/home"><h2><i class="bi bi-house"></i></h2></a>
+                    <li class="nav-item m-auto list_item">
+                        <a class="nav-link" href="/home" id="home_link"><h2><i class="bi bi-house"></i></h2></a>
                     </li>
-                    <li class="nav-item m-auto">
-                        <a class="nav-link" href="/games"><h2><i class="bi bi-controller"></i></h2></a>
+                    <li class="nav-item m-auto list_item">
+                        <a class="nav-link" href="/games" id="games_link"><h2><i class="bi bi-controller"></i></h2></a>
                     </li>
-                    <li class="nav-item m-auto">
-                        <a class="nav-link" href="/info"><h2><i class="bi bi-info-circle"></i></h2></a>
+                    <li class="nav-item m-auto list_item">
+                        <a class="nav-link" href="/info" id="info_link"><h2><i class="bi bi-info-circle"></i></h2></a>
                     </li>
-                    <li class="nav-item m-auto">
-                        <a class="nav-link" href="/profile"><h2><i class="bi bi-person-circle"></i></h2></a>
+                    <li class="nav-item m-auto list_item">
+                        <a class="nav-link" href="/profile" id="profile_link"><h2><i class="bi bi-person-circle"></i></h2></a>
                     </li>
                 </ul>
 
@@ -56,6 +56,25 @@
     </nav>
 </header>
 
+<p id="link" th:text="${link}" hidden></p>
 </body>
 </html>
+
+<script>
+    var linkNumber = document.getElementById("link").innerText;
+    console.log(linkNumber);
+
+    if(parseInt(linkNumber) === 1) {
+        $("#home_link").children().children().addClass("activeLink");
+    }
+    else if(parseInt(linkNumber) === 2) {
+        $("#games_link").children().children().addClass("activeLink");
+    }
+    else if(parseInt(linkNumber) === 3) {
+        $("#info_link").children().children().addClass("activeLink");
+    }
+    else {
+        $("#profile_link").children().children().addClass("activeLink");
+    }
+</script>
 

@@ -23,5 +23,9 @@ body {
 form#search_form{
     background-color: transparent;
 }
+.activeLink{
+    color: white;
+}
+
 
 
