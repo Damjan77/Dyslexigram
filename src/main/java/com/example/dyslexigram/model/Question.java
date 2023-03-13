@@ -15,6 +15,9 @@ public class Question {
     String text;
     String audioPath;
 
+    @ManyToOne
+    Game game;
+
     @OneToMany
     private List<Response> responses;
     @OneToOne

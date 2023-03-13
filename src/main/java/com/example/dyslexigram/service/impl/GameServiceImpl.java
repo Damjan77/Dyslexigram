@@ -36,20 +36,20 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public Optional<Game> save(String title, String description, Level level, String imgUrl, Question question) {
-        Game game = new Game(title,description,level,imgUrl,question);
+    public Optional<Game> save(String title, String description, Level level, String imgUrl, List<Question> questions) {
+        Game game = new Game(title,description,level,imgUrl,questions);
 
         return Optional.of(gameRepository.save(game));
     }
 
     @Override
-    public Game edit(Long id, String title, String description, Level level, String imgUrl, Question question) {
+    public Game edit(Long id, String title, String description, Level level, String imgUrl, List<Question> questions) {
         Game game = this.findById(id);
         game.setTitle(title);
         game.setDescription(description);
         game.setLevel(level);
         game.setImg_url(imgUrl);
-        game.setQuestion(question);
+        game.setQuestions(questions);
 
         return this.gameRepository.save(game);
     }
