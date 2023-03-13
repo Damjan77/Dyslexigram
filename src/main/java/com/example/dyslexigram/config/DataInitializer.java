@@ -36,9 +36,11 @@ public class DataInitializer {
         responseRepository.save(correctAnswer);
         List<Response> responses = new ArrayList<>();
         responses.add(correctAnswer);
+        List<Question> questionList = new ArrayList<>();
         Question question = new Question("text","audio",responses,correctAnswer);
         questionRepository.save(question);
-        Game game = new Game("title","description",level,"img_url",question);
+        questionList.add(question);
+        Game game = new Game("title","description",level,"img_url",questionList);
 
         this.gameRepository.save(game);
     }

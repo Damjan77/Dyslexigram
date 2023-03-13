@@ -4,6 +4,7 @@ import com.example.dyslexigram.model.enumerations.Level;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -19,18 +20,18 @@ public class Game {
     private Level level;
     private String img_url;
 
-    @ManyToOne
-    private Question question;
+    @OneToMany(mappedBy = "game", fetch = FetchType.EAGER)
+    private List<Question> questions;
 
     public Game() {
 
     }
 
-    public Game(String title, String description, Level level, String img_url, Question question) {
+    public Game(String title, String description, Level level, String img_url, List<Question> questions) {
         this.title = title;
         Description = description;
         this.level = level;
         this.img_url = img_url;
-        this.question = question;
+        this.questions = questions;
     }
 }

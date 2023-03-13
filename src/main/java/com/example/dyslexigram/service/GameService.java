@@ -15,9 +15,9 @@ public interface GameService {
 
     Game findByTitle(String title);
 
-    Optional<Game> save(String title, String description, Level level, String imgUrl, Question question);
+    Optional<Game> save(String title, String description, Level level, String imgUrl, List<Question> questions);
 
-    Game edit(Long id, String title, String description, Level level, String imgUrl, Question question);
+    Game edit(Long id, String title, String description, Level level, String imgUrl, List<Question> questions);
 
     Game delete(Long id);
 }
