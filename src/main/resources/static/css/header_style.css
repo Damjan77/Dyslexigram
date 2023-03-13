@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: linear-gradient(to right top, #6d1167, #750082, #7500a1, #6a00c4, #4412eb);
+    min-height: 100%;
+    font-family: DyslexicFZF, sans-serif;
+    color: white;
+}
+.navbar {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+}
+
+.nav-link, .navbar-toggler, .navbar-toggler-icon, .bi {
+    text-decoration: none;
+    font-weight: bold;
+}
+#logo_image{
+    width: 40%;
+}
+form#search_form{
+    background-color: transparent;
+}
+
+

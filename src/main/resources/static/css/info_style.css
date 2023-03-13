@@ -1,11 +1,5 @@
 body{
-    font-family: DyslexicFZF, sans-serif;
-    color: white;
-}
-
-#banner {
-    background-image: linear-gradient(to right top, #6d1167, #750082, #7500a1, #6a00c4, #4412eb);
-    height: 100vh;
+    background-attachment: fixed;
 }
 
 #info_section {
@@ -15,7 +9,6 @@ body{
     width: 300px;
     border-radius: 15px;
     opacity: 0.7;
-
 }
 
 .info_text {
@@ -46,5 +39,5 @@ img {
     width: 200px;
 }
 .col{
-    color: #6d1167;
+    color: white;
 }
