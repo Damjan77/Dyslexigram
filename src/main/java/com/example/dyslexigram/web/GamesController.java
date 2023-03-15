@@ -1,11 +1,15 @@
 package com.example.dyslexigram.web;
 
-import com.example.dyslexigram.model.User;
 import com.example.dyslexigram.service.UsersService;
-import com.sun.xml.bind.v2.TODO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.net.http.HttpResponse;
 
 @Controller
 @RequestMapping("/games")
@@ -17,7 +21,7 @@ public class GamesController {
         this.usersService = usersService;
     }
 
-    @GetMapping
+    @GetMapping("/test")
     public String getGamesPageForTestingPurposes(Model model) {
         model.addAttribute("link", 2);
         model.addAttribute("user", "Име на корисник");
@@ -25,20 +29,46 @@ public class GamesController {
         return "games";
     }
 
-    @GetMapping("/{user}")
-    public String getGamesPageWithUser(Model model, @PathVariable String user) {
-        this.usersService.save(user, 0);
+    @GetMapping()
+    public String getGamesPage(Model model,
+                               HttpServletRequest request) {
+
+        // Check if nickname exists in cookie
+        Cookie[] cookies = request.getCookies();
+        String nickname = null;
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("nickname")) {
+                    nickname = cookie.getValue();
+                    break;
+                }
+            }
+        }
+
+        // If nickname not found, redirect to enter nickname page
+        if (nickname == null) {
+            return "redirect:/login";
+        }
 
         model.addAttribute("link", 2);
-        model.addAttribute("user", user);
+        model.addAttribute("user", nickname);
+
         return "games";
     }
 
-    //TODO: check if user is already logged in
-    @PostMapping("/login")
-    public String getGamesPage(Model model, @RequestParam String user) {
+    @PostMapping("/enter-nickname")
+    public String saveUser(Model model,
+                           @RequestParam String user,
+                           HttpServletResponse response) {
+
+        //save nickname in cookie
+        Cookie cookie = new Cookie("nickname", user);
+        cookie.setMaxAge(1800); // set cookie to last for 30 minutes (1800 sec), after 30 minutes you need to enter nickname again
+        response.addCookie(cookie);
+
+        this.usersService.save(user, 0);
         model.addAttribute("link", 2);
-        return "redirect:/games/" + user;
+        return "redirect:/games";
     }
 
 

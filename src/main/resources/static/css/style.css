@@ -43,3 +43,7 @@ form button:active .button_top {
 .img-fluid{
     height: auto;
 }
+
+h1 {
+    letter-spacing: 5px;
+}
