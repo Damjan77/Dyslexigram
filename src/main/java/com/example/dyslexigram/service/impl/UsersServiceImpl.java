@@ -1,6 +1,6 @@
 package com.example.dyslexigram.service.impl;
 
-import com.example.dyslexigram.model.Users;
+import com.example.dyslexigram.model.User;
 import com.example.dyslexigram.model.exceptions.InvalidUserIdException;
 import com.example.dyslexigram.model.exceptions.UserNotFoundException;
 import com.example.dyslexigram.repository.UsersRepository;
@@ -20,30 +20,30 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public List<Users> listAllUsers() {
+    public List<User> listAllUsers() {
         return this.usersRepository.findAll();
     }
 
     @Override
-    public Users findById(Long id) {
+    public User findById(Long id) {
         return this.usersRepository.findById(id).orElseThrow(InvalidUserIdException::new);
     }
 
     @Override
-    public Users findByNickname(String nickname) {
+    public User findByNickname(String nickname) {
         return this.usersRepository.findByNickname(nickname).orElseThrow(UserNotFoundException::new);
     }
 
     @Override
-    public Optional<Users> save(String nickname, int total_points) {
-        Users userTosave = new Users(nickname,total_points);
+    public Optional<User> save(String nickname, int total_points) {
+        User userTosave = new User(nickname,total_points);
 
         return Optional.of(this.usersRepository.save(userTosave));
     }
 
     @Override
-    public Users edit(Long id, String nickname, int total_points) {
-        Users userToEdit = this.findById(id);
+    public User edit(Long id, String nickname, int total_points) {
+        User userToEdit = this.findById(id);
         userToEdit.setNickname(nickname);
         userToEdit.setTotal_points(total_points);
 
