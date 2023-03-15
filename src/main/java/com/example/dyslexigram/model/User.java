@@ -5,21 +5,23 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Entity
 @Data
-public class Users {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue
     private Long id;
     private String nickname;
     private int total_points;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(String nickname, int total_points) {
+    public User(String nickname, int total_points) {
         this.nickname = nickname;
         this.total_points = total_points;
     }
