@@ -20,7 +20,7 @@ public class Game {
     private Level level;
     private String img_url;
 
-    @OneToMany(mappedBy = "game", fetch = FetchType.EAGER)
+    @ManyToMany
     private List<Question> questions;
 
     public Game() {

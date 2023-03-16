@@ -15,10 +15,7 @@ public class Question {
     String text;
     String audioPath;
 
-    @ManyToOne
-    Game game;
-
-    @OneToMany
+    @ManyToMany
     private List<Response> responses;
     @OneToOne
     private Response correct_answer;

@@ -1,8 +1,11 @@
 package com.example.dyslexigram.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Response {
 
     @Id
@@ -10,8 +13,7 @@ public class Response {
     Long id;
 
     String text;
-
-
+    
     public Response() {
     }
 

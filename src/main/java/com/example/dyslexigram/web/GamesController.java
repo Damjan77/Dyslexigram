@@ -1,5 +1,7 @@
 package com.example.dyslexigram.web;
 
+import com.example.dyslexigram.model.Game;
+import com.example.dyslexigram.service.GameService;
 import com.example.dyslexigram.service.UsersService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,17 +10,18 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.net.http.HttpResponse;
+import java.util.List;
 
 @Controller
 @RequestMapping("/games")
 public class GamesController {
 
     private final UsersService usersService;
+    private final GameService gameService;
 
-    public GamesController(UsersService usersService) {
+    public GamesController(UsersService usersService, GameService gameService) {
         this.usersService = usersService;
+        this.gameService = gameService;
     }
 
     @GetMapping("/test")
@@ -50,7 +53,10 @@ public class GamesController {
             return "redirect:/login";
         }
 
+        List<Game> games = this.gameService.listAllGames();
+
         model.addAttribute("link", 2);
+        model.addAttribute("games", games);
         model.addAttribute("user", nickname);
 
         return "games";
@@ -69,6 +75,16 @@ public class GamesController {
         this.usersService.save(user, 0);
         model.addAttribute("link", 2);
         return "redirect:/games";
+    }
+
+    @GetMapping("/{gameId}")
+    public String playGame(Model model,
+                           @PathVariable Long gameId) {
+        Game game = this.gameService.findById(gameId);
+
+        model.addAttribute("link", 0);
+        model.addAttribute("game", game);
+        return "game";
     }
 
 
