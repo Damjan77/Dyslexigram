@@ -26,58 +26,16 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" th:each="game : ${games}">
                 <div class="card-sl">
                     <div class="card-image">
                         <img
-                                src="../images/game.jpg" />
+                                th:src="(${game.getImg_url()})" />
                     </div>
-                    <div class="card-heading">
-                        Пример игра
-                    </div>
-                    <div class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                    </div>
-                    <div class="card-text" style="text-decoration: underline">
-                        Ниво 1
-                    </div>
-                    <a href="#" class="card-button">Играј</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-sl">
-                    <div class="card-image">
-                        <img
-                                src="../images/game.jpg" />
-                    </div>
-                    <div class="card-heading">
-                        Пример игра
-                    </div>
-                    <div class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                    </div>
-                    <div class="card-text" style="text-decoration: underline">
-                        Ниво 1
-                    </div>
-                    <a href="#" class="card-button">Играј</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-sl">
-                    <div class="card-image">
-                        <img
-                                src="../images/game.jpg" />
-                    </div>
-                    <div class="card-heading">
-                        Пример игра
-                    </div>
-                    <div class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                    </div>
-                    <div class="card-text" style="text-decoration: underline">
-                        Ниво 1
-                    </div>
-                    <a href="#" class="card-button">Играј</a>
+                    <div class="card-heading" th:text="${game.getTitle()}"></div>
+                    <div class="card-text" th:text="${game.getDescription()}"></div>
+                    <div class="card-text" style="text-decoration: underline; text-transform: uppercase" th:text="${game.getLevel()}"></div>
+                    <a th:href="'/games/' + ${game.getId()}" class="card-button">Играј</a>
                 </div>
             </div>
         </div>
