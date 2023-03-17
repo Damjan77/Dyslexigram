@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Controller
@@ -57,7 +60,7 @@ public class GamesController {
 
         model.addAttribute("link", 2);
         model.addAttribute("games", games);
-        model.addAttribute("user", nickname);
+        model.addAttribute("user", nickname.replace("+", " "));
 
         return "games";
     }
@@ -65,10 +68,13 @@ public class GamesController {
     @PostMapping("/enter-nickname")
     public String saveUser(Model model,
                            @RequestParam String user,
-                           HttpServletResponse response) {
+                           HttpServletResponse response) throws UnsupportedEncodingException {
+
+        //not encoding the cookie value will result in exception if we add space character in the nickname
+        String cookieEnc = URLEncoder.encode(user, StandardCharsets.UTF_8);
 
         //save nickname in cookie
-        Cookie cookie = new Cookie("nickname", user);
+        Cookie cookie = new Cookie("nickname", cookieEnc);
         cookie.setMaxAge(1800); // set cookie to last for 30 minutes (1800 sec), after 30 minutes you need to enter nickname again
         response.addCookie(cookie);
 
