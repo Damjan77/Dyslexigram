@@ -71,5 +71,32 @@ public class DataInitializer {
 
         this.gameRepository.save(game1);
 
+        Response response11 = new Response("Црвена");
+        Response response12 = new Response("Жолта");
+        Response response13 = new Response("Зелена");
+        Response response14 = new Response("Сина");
+
+        this.responseRepository.save(response11);
+        this.responseRepository.save(response12);
+        this.responseRepository.save(response13);
+        this.responseRepository.save(response14);
+
+        List<Response> responseList1 = new ArrayList<>(Arrays.asList(response11,response12,response13,response14));
+
+        Question question4 = new Question("https://htmlcolorcodes.com/assets/images/colors/red-color-solid-background-1920x1080.png", "", responseList1, response11);
+        Question question5 = new Question("https://www.travelandleisure.com/thmb/KTIha5CLifSoUD3gx0YP51xc3rY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/blue0517-4dfc85cb0200460ab717b101ac07888f.jpg", "", responseList1, response14);
+        Question question6 = new Question("https://htmlcolorcodes.com/assets/images/colors/neon-green-color-solid-background-1920x1080.png", "", responseList1, response13);
+
+        this.questionRepository.save(question4);
+        this.questionRepository.save(question5);
+        this.questionRepository.save(question6);
+
+        List<Question> questionList1 = new ArrayList<>(Arrays.asList(question4,question5,question6));
+
+        Game game3 = new Game("Погоди ја бојата",
+                "Играта се состои од неколку слики со бои. Можете ли да погодете за коjа боја станува збор?",
+                Level.Ниво1, "/images/color.jpg", questionList1);
+
+        this.gameRepository.save(game3);
     }
 }
