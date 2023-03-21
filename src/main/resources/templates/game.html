@@ -41,21 +41,19 @@
     </div>
 </section>
 
-<p th:text="${game.id}" id="gameId" hidden ></p>
 </body>
 </html>
 
 <script>
-    var id = parseInt(document.getElementById("gameId").innerText);
-    console.log(id);
 
-    if(id === 22) {
+    var name = document.getElementById("gameTitle").innerHTML;
+    console.log(name);
+
+    if(name === 'Погоди ја бојата') {
         console.log("test")
         document.getElementById("image_question").hidden = false;
         document.getElementById("text_question").hidden = true;
 
         document.getElementById("image_question").setAttribute("width", "400px");
-
-
     }
 </script>

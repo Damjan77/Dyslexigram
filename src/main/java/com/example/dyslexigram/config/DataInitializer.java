@@ -31,29 +31,19 @@ public class DataInitializer {
 
     @PostConstruct
     public void init() {
+        //Игра 1 Ниво 1
+
         Response response1 = new Response("А");
         Response response2 = new Response("Е");
         Response response3 = new Response("И");
         Response response4 = new Response("О");
-        Response response5 = new Response("У");
-        Response response6 = new Response("В");
-        Response response7 = new Response("К");
-        Response response8 = new Response("Ј");
-        Response response9 = new Response("М");
-        Response response10 = new Response("Д");
 
         this.responseRepository.save(response1);
         this.responseRepository.save(response2);
         this.responseRepository.save(response3);
         this.responseRepository.save(response4);
-        this.responseRepository.save(response5);
-        this.responseRepository.save(response6);
-        this.responseRepository.save(response7);
-        this.responseRepository.save(response8);
-        this.responseRepository.save(response9);
-        this.responseRepository.save(response10);
 
-        List<Response> responseList = new ArrayList<>(Arrays.asList(response1,response2,response3,response4,response5, response6, response7, response8, response9, response10));
+        List<Response> responseList = new ArrayList<>(Arrays.asList(response1,response2,response3,response4));
 
         Question question1 = new Question("П_НЕДЕЛНИК", "", responseList, response4);
         Question question2 = new Question("УЧИТ_ЛКА", "", responseList, response3);
@@ -71,6 +61,47 @@ public class DataInitializer {
 
         this.gameRepository.save(game1);
 
+        //Игра 1 Ниво 2
+        //TODO
+
+        //Игра 1 Ниво 3
+        //TODO
+
+        //Игра 2 Ниво 1
+        //TODO
+
+        //Игра 2 Ниво 2
+        Response response1ForMathGame = new Response("4");
+        Response response2ForMathGame = new Response("20");
+        Response response3ForMathGame = new Response("0");
+        Response response4ForMathGame = new Response("1");
+
+        this.responseRepository.save(response1ForMathGame);
+        this.responseRepository.save(response2ForMathGame);
+        this.responseRepository.save(response3ForMathGame);
+        this.responseRepository.save(response4ForMathGame);
+
+        List<Response> responseListForMathGame = new ArrayList<>(Arrays.asList(response1ForMathGame,response2ForMathGame,response3ForMathGame,response4ForMathGame));
+
+        Question question1ForMathGame = new Question("2 + 2 =", "", responseListForMathGame, response1ForMathGame);
+        Question question2ForMathGame = new Question("10 * 2", "", responseListForMathGame, response2ForMathGame);
+        Question question3ForMathGame = new Question("11 - 11 = ", "", responseListForMathGame, response3ForMathGame);
+
+        this.questionRepository.save(question1ForMathGame);
+        this.questionRepository.save(question2ForMathGame);
+        this.questionRepository.save(question3ForMathGame);
+
+        List<Question> questionListForMathGame = new ArrayList<>(Arrays.asList(question1ForMathGame,question2ForMathGame,question3ForMathGame));
+
+        Game gameMath = new Game("Реши го математичкиот израз",
+                "Играта се состои од неколку математички изрази кои од вас се бара да ги решите. Изразите се соодветно лесни.",
+                Level.Ниво2,"/images/mathGame.jpg",questionListForMathGame);
+
+        this.gameRepository.save(gameMath);
+        //Игра 2 Ниво 3
+        //TODO
+
+        //Игра 3 Ниво 1
         Response response11 = new Response("Црвена");
         Response response12 = new Response("Жолта");
         Response response13 = new Response("Зелена");
@@ -98,5 +129,12 @@ public class DataInitializer {
                 Level.Ниво1, "/images/color.jpg", questionList1);
 
         this.gameRepository.save(game3);
+
+        //Игра 3 Ниво 2
+        //TODO
+
+        //Игра 3 Ниво 3
+        //TODO
+
     }
 }
