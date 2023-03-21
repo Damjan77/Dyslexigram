@@ -24,7 +24,8 @@
             <div class="question_section">
                 <div class="row d-flex justify-content-center py-3">
                     <div class="py-5">
-                        <h1 th:text="${game.getQuestions().get(0).getText()}"></h1>
+                        <h1 id="text_question" th:text="${game.getQuestions().get(0).getText()}"></h1>
+                        <img id="image_question" th:src="${game.getQuestions().get(0).getText()}" hidden>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
@@ -40,5 +41,21 @@
     </div>
 </section>
 
+<p th:text="${game.id}" id="gameId" hidden></p>
 </body>
 </html>
+
+<script>
+    var id = parseInt(document.getElementById("gameId").innerText);
+    console.log(id);
+
+    if(id === 22) {
+        console.log("test")
+        document.getElementById("image_question").hidden = false;
+        document.getElementById("text_question").hidden = true;
+
+        document.getElementById("image_question").setAttribute("width", "400px");
+
+
+    }
+</script>
