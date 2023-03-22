@@ -76,6 +76,7 @@ public class GamesController {
         //save nickname in cookie
         Cookie cookie = new Cookie("nickname", cookieEnc);
         cookie.setMaxAge(1800); // set cookie to last for 30 minutes (1800 sec), after 30 minutes you need to enter nickname again
+        cookie.setPath("/"); //global cookie
         response.addCookie(cookie);
 
         this.usersService.save(user, 0);
