@@ -120,7 +120,7 @@ public class DataInitializer {
 
         Game game2level1 = new Game("Погоди го бројот",
                 "Играта се состои од дадени броеви. Ваша задача е да погодите како се пишува точно.",
-                Level.Ниво1, "/images/game.jpg", questionListG2L1);
+                Level.Ниво1, "/images/number-game.jpg", questionListG2L1);
 
         this.gameRepository.save(game2level1);
 
@@ -184,7 +184,7 @@ public class DataInitializer {
 
         Game game2level3 = new Game("Добиј го точниот резултат",
                 "Играта се состои од неколку математички изрази во кои недостасува некој број. Пронајдете го.",
-                Level.Ниво2, "/images/mathGame.jpg", questionListG2L3);
+                Level.Ниво2, "/images/missingNumber.jpg", questionListG2L3);
 
         this.gameRepository.save(game2level3);
 
@@ -213,7 +213,7 @@ public class DataInitializer {
         List<Question> questionListG3L1 = new ArrayList<>(Arrays.asList(question1G3L1, question2G3L1, question3G3L1));
 
         Game game3level1 = new Game("Погоди ја бојата",
-                "Играта се состои од неколку слики со бои. Можете ли да погодете за коjа боја станува збор?",
+                "Играта се состои од неколку слики со бои. Можете ли да погодите за коjа боја станува збор?",
                 Level.Ниво1, "/images/color.jpg", questionListG3L1);
 
         this.gameRepository.save(game3level1);
