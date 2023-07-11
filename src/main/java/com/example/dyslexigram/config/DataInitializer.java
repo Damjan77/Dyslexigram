@@ -218,8 +218,36 @@ public class DataInitializer {
 
         this.gameRepository.save(game3level1);
 
+
+
         //Игра 3 Ниво 2
-        //TODO
+        Response response1G3L2 = new Response("+");
+        Response response2G3L2 = new Response("-");
+        Response response3G3L2 = new Response("*");
+        Response response4G3L2 = new Response("/");
+
+        this.responseRepository.save(response1G3L2);
+        this.responseRepository.save(response2G3L2);
+        this.responseRepository.save(response3G3L2);
+        this.responseRepository.save(response4G3L2);
+
+        List<Response> responseListG3L2 = new ArrayList<>(Arrays.asList(response1G3L2, response2G3L2, response3G3L2, response4G3L2));
+
+        Question question1G3L2 = new Question("2 _ 2 = 4", "", responseListG3L2, response1G3L2);
+        Question question2G3L2 = new Question("13 _ 5 = 8", "", responseListG3L2, response2G3L2);
+        Question question3G3L2 = new Question("3 _ 11 = 33", "", responseListG3L2, response3G3L2);
+
+        this.questionRepository.save(question1G3L2);
+        this.questionRepository.save(question2G3L2);
+        this.questionRepository.save(question3G3L2);
+
+        List<Question> questionListG3L2 = new ArrayList<>(Arrays.asList(question1G3L2, question2G3L2, question3G3L2));
+
+        Game game3level2 = new Game("Погоди ја аритметичката операција",
+                "Математички изрази со дадени броеви, Ваша задача е да погодите која е бараната аритметичка операција.",
+                Level.Ниво2, "/images/Arithmetic-Operations.png", questionListG3L2);
+
+        this.gameRepository.save(game3level2);
 
         //Игра 3 Ниво 3
         //TODO
