@@ -134,23 +134,23 @@ public class DataInitializer {
         this.responseRepository.save(response3G1L2);
         this.responseRepository.save(response4G1L2);
 
-        List<Response> responseListG2L2 = new ArrayList<>(Arrays.asList(response1G1L2, response2G1L2, response3G1L2, response4G1L2));
+        List<Response> responseListG1L2 = new ArrayList<>(Arrays.asList(response1G1L2, response2G1L2, response3G1L2, response4G1L2));
 
-        Question question1G2L2 = new Question("2 + 2 =", "", responseListG2L2, response1G1L2);
-        Question question2G2L2 = new Question("10 * 2", "", responseListG2L2, response2G1L2);
-        Question question3G2L2 = new Question("11 - 11 = ", "", responseListG2L2, response3G1L2);
+        Question question1G1L2 = new Question("2 + 2 =", "", responseListG1L2, response1G1L2);
+        Question question2G1L2 = new Question("10 * 2", "", responseListG1L2, response2G1L2);
+        Question question3G1L2 = new Question("11 - 11 = ", "", responseListG1L2, response3G1L2);
 
-        this.questionRepository.save(question1G2L2);
-        this.questionRepository.save(question2G2L2);
-        this.questionRepository.save(question3G2L2);
+        this.questionRepository.save(question1G1L2);
+        this.questionRepository.save(question2G1L2);
+        this.questionRepository.save(question3G1L2);
 
-        List<Question> questionListG2L2 = new ArrayList<>(Arrays.asList(question1G2L2, question2G2L2, question3G2L2));
+        List<Question> questionListG1L2 = new ArrayList<>(Arrays.asList(question1G1L2, question2G1L2, question3G1L2));
 
-        Game game2level2 = new Game("Реши го математичкиот израз",
+        Game game1level2 = new Game("Реши го математичкиот израз",
                 "Играта се состои од неколку математички изрази кои од вас се бара да ги решите.",
-                Level.Ниво2, "/images/mathGame.jpg", questionListG2L2);
+                Level.Ниво2, "/images/mathGame.jpg", questionListG1L2);
 
-        this.gameRepository.save(game2level2);
+        this.gameRepository.save(game1level2);
 
         // Игра 2
         Response response1G2L2 = new Response("15");
@@ -163,27 +163,55 @@ public class DataInitializer {
         this.responseRepository.save(response3G2L2);
         this.responseRepository.save(response4G2L2);
 
-        List<Response> responseListG2L3 = new ArrayList<>(Arrays.asList(
+        List<Response> responseListG2L2 = new ArrayList<>(Arrays.asList(
                 response1G2L2,
                 response2G2L2,
                 response3G2L2,
                 response4G2L2));
 
-        Question question1G2L3 = new Question("2 + _ = 7", "", responseListG2L3, response2G2L2);
-        Question question2G2L3 = new Question("_ * 2 = 30", "", responseListG2L3, response1G2L2);
-        Question question3G2L3 = new Question("55 - _ = 43", "", responseListG2L3, response4G2L2);
+        Question question1G2L2 = new Question("2 + _ = 7", "", responseListG2L2, response2G2L2);
+        Question question2G2L2 = new Question("_ * 2 = 30", "", responseListG2L2, response1G2L2);
+        Question question3G2L2 = new Question("55 - _ = 43", "", responseListG2L2, response4G2L2);
 
-        this.questionRepository.save(question1G2L3);
-        this.questionRepository.save(question2G2L3);
-        this.questionRepository.save(question3G2L3);
+        this.questionRepository.save(question1G2L2);
+        this.questionRepository.save(question2G2L2);
+        this.questionRepository.save(question3G2L2);
 
-        List<Question> questionListG2L3 = new ArrayList<>(Arrays.asList(question1G2L3, question2G2L3, question3G2L3));
+        List<Question> questionListG2L2 = new ArrayList<>(Arrays.asList(question1G2L2, question2G2L2, question3G2L2));
 
-        Game game2level3 = new Game("Добиј го точниот резултат",
+        Game game2level2 = new Game("Добиј го точниот резултат",
                 "Играта се состои од неколку математички изрази во кои недостасува некој број. Пронајдете го.",
-                Level.Ниво2, "/images/missingNumber.jpg", questionListG2L3);
+                Level.Ниво2, "/images/missingNumber.jpg", questionListG2L2);
 
-        this.gameRepository.save(game2level3);
+        this.gameRepository.save(game2level2);
+
+        // Игра 3
+        Response response1G3L2 = new Response("2 + 2");
+        Response response2G3L2 = new Response("10 + 3");
+        Response response3G3L2 = new Response("20 - 5");
+        Response response4G3L2 = new Response("12 - 1");
+
+        this.responseRepository.save(response1G3L2);
+        this.responseRepository.save(response2G3L2);
+        this.responseRepository.save(response3G3L2);
+        this.responseRepository.save(response4G3L2);
+
+        List<Response> responseListG3L2 = new ArrayList<>(Arrays.asList(response1G3L2, response2G3L2, response3G3L2, response4G3L2));
+
+        Question question1G3L2 = new Question("__ _ __ = 4", "", responseListG3L2, response1G3L2);
+        Question question2G3L2 = new Question("__ _ __ = 15", "", responseListG3L2, response3G3L2);
+        Question question3G3L2 = new Question("__ _ __ = 13", "", responseListG3L2, response2G3L2);
+
+        this.questionRepository.save(question1G3L2);
+        this.questionRepository.save(question2G3L2);
+        this.questionRepository.save(question3G3L2);
+
+        List<Question> questionListG3L2 = new ArrayList<>(Arrays.asList(question1G3L2, question2G3L2, question3G3L2));
+
+        Game game3level2 = new Game("Погоди го изразот", "Играта се состои од даден резултат за кој вие треба да го погодите соодветниот израз.",
+                Level.Ниво2, "/images/single-digit-subtraction-big.png", questionListG3L2);
+
+        this.gameRepository.save(game3level2);
 
         /* --------------------------НИВО 3--------------------------------- */
 
