@@ -1,6 +1,7 @@
 package com.example.dyslexigram.web;
 
 import com.example.dyslexigram.model.Game;
+import com.example.dyslexigram.model.User;
 import com.example.dyslexigram.service.GameService;
 import com.example.dyslexigram.service.UsersService;
 import org.springframework.stereotype.Controller;
@@ -60,7 +61,9 @@ public class GamesController {
 
         model.addAttribute("link", 2);
         model.addAttribute("games", games);
-        model.addAttribute("user", nickname.replace("+", " "));
+
+        User user = new User(nickname.replace("+", " "), 0);
+        model.addAttribute("user", user);
 
         return "games";
     }

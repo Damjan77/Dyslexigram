@@ -1,6 +1,7 @@
 package com.example.dyslexigram.web;
 
 import com.example.dyslexigram.model.Game;
+import com.example.dyslexigram.model.User;
 import com.example.dyslexigram.service.GameService;
 import com.example.dyslexigram.service.UsersService;
 import org.springframework.stereotype.Controller;
@@ -42,10 +43,10 @@ public class ProfileController {
 
         model.addAttribute("link", 4);
         model.addAttribute("games", games);
-        //TODO
-//        model.addAttribute("points", points);
-        model.addAttribute("user", nickname.replace("+", " "));
 
-        return "profile.html";
+        User user = this.usersService.findByNickname(nickname.replace("+", " "));
+        model.addAttribute("user", user);
+
+        return "profile";
     }
 }

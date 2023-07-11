@@ -27,7 +27,7 @@
             <div class="col-md-3 d-flex">
                 <div class="row justify-content-center">
                     <img src="../images/user4.png" alt="" class="img-fluid w-25">
-                    <h5 class="pt-3" id="player_name" th:text="${user}"></h5>
+                    <h5 class="pt-3" id="player_name" th:text="${user.getNickname()}"></h5>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
             <div class="col-md-3 pt-3">
                 <h5 id="points_name" th:text="${user.getTotal_points()}">
 
-                <img src="../images/star.png" alt="" class="img-fluid"  style="width: 15%"></h5>
+                    <img src="../images/star.png" alt="" class="img-fluid" style="width: 15%"></h5>
             </div>
 
         </div>
