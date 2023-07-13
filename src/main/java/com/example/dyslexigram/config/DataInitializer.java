@@ -216,6 +216,47 @@ public class DataInitializer {
 
 
         /* --------------------------НИВО 3--------------------------------- */
+        //Дамјан - Ниво 3-2: Одговори ги прашањата 2 (Ниво 3)
+        Response response1G2L3 = new Response("црвена");
+        Response response2G2L3 = new Response("црна");
+        Response response3G2L3 = new Response("бела");
+        Response response4G2L3 = new Response("портокалова");
+
+        Response response1G2L3r1 = new Response("Пепелашка");
+        Response response2G2L3r1 = new Response("Снежана");
+        Response response3G2L3r1 = new Response("Гаргамел");
+        Response response4G2L3r1 = new Response("Џери");
+
+        this.responseRepository.save(response1G2L3);
+        this.responseRepository.save(response2G2L3);
+        this.responseRepository.save(response3G2L3);
+        this.responseRepository.save(response4G2L3);
+
+        this.responseRepository.save(response1G2L3r1);
+        this.responseRepository.save(response2G2L3r1);
+        this.responseRepository.save(response3G2L3r1);
+        this.responseRepository.save(response4G2L3r1);
+
+        List<Response> responseListG2L3 = new ArrayList<>(Arrays.asList(response1G2L3, response2G2L3, response3G2L3, response4G2L3));
+        List<Response> responseListG2L3r1 = new ArrayList<>(Arrays.asList(response1G2L3r1, response2G2L3r1, response3G2L3r1, response4G2L3r1));
+
+        Question question1G2L3 = new Question("Каква боја е јаболкото?", "", responseListG2L3, response1G2L3);
+        Question question2G2L3 = new Question("Каква боја е морковот?", "", responseListG2L3, response2G2L3);
+        Question question3G2L3 = new Question("Како се вика принцезата кој заспала се додека нејзиниот принц" +
+                " не ја бакнал?", "", responseListG2L3r1, response3G2L3r1);
+
+        this.questionRepository.save(question1G2L3);
+        this.questionRepository.save(question2G2L3);
+        this.questionRepository.save(question3G2L3);
+
+        List<Question> questionListG2L3 = new ArrayList<>(Arrays.asList(question1G2L3, question2G2L3, question3G2L3));
+
+        Game game2level3 = new Game("Одговори ги прашањата",
+                "Дадени се соодветни прашања. Ваша задача е да ги одговорите соодветните прашања.",
+                Level.Ниво3, "/images/AQ.png", questionListG2L3);
+
+        this.gameRepository.save(game2level3);
+
         //Игра 1
 
         Response response1G1L3 = new Response("+");
