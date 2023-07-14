@@ -1,5 +1,6 @@
 package com.example.dyslexigram.service.impl;
 
+import com.example.dyslexigram.model.Game;
 import com.example.dyslexigram.model.Question;
 import com.example.dyslexigram.model.Response;
 import com.example.dyslexigram.model.exceptions.InvalidQuestionIdException;
@@ -27,6 +28,11 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public Question findById(Long id) {
         return this.questionRepository.findById(id).orElseThrow(InvalidQuestionIdException::new);
+    }
+
+    @Override
+    public List<Question> findAllByGame(Game game) {
+        return game.getQuestions();
     }
 
     @Override

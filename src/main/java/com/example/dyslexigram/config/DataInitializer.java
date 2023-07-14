@@ -273,9 +273,9 @@ public class DataInitializer {
         List<Response> responseListG2L3r1 = new ArrayList<>(Arrays.asList(response1G2L3r1, response2G2L3r1, response3G2L3r1, response4G2L3r1));
 
         Question question1G2L3 = new Question("Каква боја е јаболкото?", "", responseListG2L3, response1G2L3);
-        Question question2G2L3 = new Question("Каква боја е морковот?", "", responseListG2L3, response2G2L3);
+        Question question2G2L3 = new Question("Каква боја е морковот?", "", responseListG2L3, response4G2L3);
         Question question3G2L3 = new Question("Како се вика принцезата кој заспала се додека нејзиниот принц" +
-                " не ја бакнал?", "", responseListG2L3r1, response3G2L3r1);
+                " не ја бакнал?", "", responseListG2L3r1, response2G2L3r1);
 
         this.questionRepository.save(question1G2L3);
         this.questionRepository.save(question2G2L3);

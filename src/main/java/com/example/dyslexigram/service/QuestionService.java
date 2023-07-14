@@ -12,6 +12,8 @@ public interface QuestionService {
 
     Question findById(Long id);
 
+    List<Question> findAllByGame(Game game);
+
     Optional<Question> save(String text, String audioPath,List<Response> responses, Response correct_answer);
 
     Question delete(Long id);

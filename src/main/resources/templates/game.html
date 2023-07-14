@@ -2,12 +2,12 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
     <link type="text/css" rel="stylesheet" href="../css/game_style.css"/>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title th:text="${game.getTitle()}"></title>
 </head>
 <body>
@@ -24,16 +24,33 @@
             <div class="question_section">
                 <div class="row d-flex justify-content-center py-3">
                     <div class="py-5">
-                        <h1 id="text_question" th:text="${game.getQuestions().get(0).getText()}"></h1>
-                        <img id="image_question" th:src="${game.getQuestions().get(0).getText()}" hidden>
+                        <h1 id="text_question"></h1>
+                        <img id="image_question" alt="question-image" hidden>
                     </div>
                 </div>
-                <div class="row d-flex justify-content-center">
-                    <div class="col py-5">
-                        <a th:each="response : ${game.getQuestions().get(0).getResponses()}" th:text="${response.getText}"
-                           type="submit" class="btn btn-outline-secondary btn-lg waves-effect mx-3 my-3">
-                        </a>
-
+                <div class="row justify-content-center mt-4 mb-2">
+                    <div class="col col-lg-5">
+                        <button type="button" class="btn btn-lg btn-primary btn-default w-100 response" id="ans1"></button>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-4 mb-2">
+                    <div class="col col-lg-5">
+                        <button type="button" class="btn btn-lg btn-primary btn-default w-100 response" id="ans2"></button>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-4 mb-2">
+                    <div class="col col-lg-5">
+                        <button type="button" class="btn btn-lg btn-primary btn-default w-100 response" id="ans3"></button>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-4 mb-2">
+                    <div class="col col-lg-5">
+                        <button type="button" class="btn btn-lg btn-primary btn-default w-100 response" id="ans4"></button>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3 mb-2">
+                    <div class="col col-lg-2">
+                        <a href="#" type="button" class="btn btn-lg btn-success btn-default w-100 response" id="finish" hidden>Заврши</a>
                     </div>
                 </div>
             </div>
@@ -41,19 +58,108 @@
     </div>
 </section>
 
+<!-- Correct Modal -->
+<div class="modal fade" id="correctModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="color: black">Точен одговор!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Wrong Modal -->
+<div class="modal fade" id="wrongModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="color: black">Погрешен одговор!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="color: black">
+                Обидете се повторно...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 </html>
 
 <script>
-
     var name = document.getElementById("gameTitle").innerHTML;
-    console.log(name);
+    let imageGame = false;
 
     if((name === 'Погоди ја бојата') || (name === 'Погоди што има на сликата')) {
         console.log("test")
         document.getElementById("image_question").hidden = false;
         document.getElementById("text_question").hidden = true;
 
+        imageGame = true;
+
         document.getElementById("image_question").setAttribute("width", "400px");
+    }
+
+    let baseUrl = window.location.href;
+    let baseUrlParts = baseUrl.split("games");
+    let apiUrl;
+
+    // localhost:9090/api/questions/32
+    apiUrl = baseUrlParts[0] + "api/questions" + baseUrlParts[1];
+    let questions;
+    let currentQuestion = 0;
+
+    axios.get(apiUrl).then(response => {
+        questions = response;
+        console.log(JSON.stringify(questions.data[0]))
+        nextQuestion();
+    })
+
+    function checkAnswer(response) {
+        if(questions.data[currentQuestion].correct_answer.text.toLowerCase()===response.toLowerCase()) {
+            $('#correctModal').modal('toggle');
+            currentQuestion++;
+            if(currentQuestion === 3){
+                document.getElementById("finish").hidden = false;
+            }else{
+                nextQuestion();
+            }
+        } else {
+            $('#wrongModal').modal('toggle');
+        }
+    }
+
+    function nextQuestion() {
+        if(imageGame) {
+            document.getElementById("image_question").setAttribute("src", questions.data[currentQuestion].text);
+        } else {
+            document.getElementById("text_question").innerHTML = questions.data[currentQuestion].text;
+        }
+
+        let arrResponses = document.getElementsByClassName("response");
+
+        for(let i=0; i<arrResponses.length; i++) {
+            let questionResponses = questions.data[currentQuestion].responses;
+            console.log(`Responses ${JSON.stringify([questionResponses])}`)
+
+            arrResponses[i].replaceWith(arrResponses[i].cloneNode(true));
+
+            arrResponses[i].addEventListener("click", function () {
+                checkAnswer(questionResponses[i].text);
+            });
+
+            arrResponses[i].innerHTML = questionResponses[i].text;
+        }
     }
 </script>
