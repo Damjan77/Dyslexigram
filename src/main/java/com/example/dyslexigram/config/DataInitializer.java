@@ -47,7 +47,7 @@ public class DataInitializer {
         List<Response> responseListG1L1 = new ArrayList<>(Arrays.asList(response1G1L1, response2G1L1, response3G1L1, response4G1L1));
 
         Question question1G1L1 = new Question("П_НЕДЕЛНИК", "", responseListG1L1, response4G1L1);
-        Question question2G1L1 = new Question("УЧИТ_ЛКА", "", responseListG1L1, response3G1L1);
+        Question question2G1L1 = new Question("УЧИТ_ЛКА", "", responseListG1L1, response2G1L1);
         Question question3G1L1 = new Question("_ВТОМОБИЛ", "", responseListG1L1, response1G1L1);
 
         this.questionRepository.save(question1G1L1);
