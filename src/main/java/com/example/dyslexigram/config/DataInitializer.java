@@ -249,5 +249,33 @@ public class DataInitializer {
         //Игра 2
 
         //Игра 3
+        Response response1G3L3 = new Response("Куќа");
+        Response response2G3L3 = new Response("Маче");
+        Response response3G3L3 = new Response("Книга");
+        Response response4G3L3 = new Response("Куче");
+
+        this.responseRepository.save(response1G3L3);
+        this.responseRepository.save(response2G3L3);
+        this.responseRepository.save(response3G3L3);
+        this.responseRepository.save(response4G3L3);
+
+        List<Response> responseListG3L3 = new ArrayList<>(Arrays.asList(response1G3L3, response2G3L3, response3G3L3, response4G3L3));
+
+
+        Question question1G3L3 = new Question("https://static.vecteezy.com/system/resources/previews/006/325/639/original/dog-cartoon-colored-clipart-illustration-free-vector.jpg", "", responseListG3L3, response4G3L3);
+        Question question2G3L3 = new Question("https://img.freepik.com/premium-vector/cartoon-funny-cat-sitting-white-background_29190-7708.jpg", "", responseListG3L3, response2G3L3);
+        Question question3G3L3 = new Question("https://clipartix.com/wp-content/uploads/2016/05/Books-book-clipart-clipart-cliparts-for-you.jpg", "", responseListG3L3, response3G3L3);
+
+        this.questionRepository.save(question1G3L3);
+        this.questionRepository.save(question2G3L3);
+        this.questionRepository.save(question3G3L3);
+
+        List<Question> questionListG3L3 = new ArrayList<>(Arrays.asList(question1G3L3, question2G3L3, question3G3L3));
+
+        Game game3level3 = new Game("Погоди што има на сликата",
+                "Играта се состои од неколку слики. Можете ли да погодите што има на сликата?",
+                Level.Ниво3, "/images/pictures.jpg", questionListG3L3);
+
+        this.gameRepository.save(game3level3);
     }
 }
