@@ -22,10 +22,15 @@
 
         <div class="row d-flex justify-content-center my-3">
             <div class="question_section">
-                <div class="row d-flex justify-content-center py-3">
+                <div class="row d-flex justify-content-center">
                     <div class="py-5">
                         <h1 id="text_question"></h1>
                         <img id="image_question" alt="question-image" hidden>
+                        <div class="d-flex justify-content-center">
+                            <h2>Поени: </h2>
+                            <h2 id="points" th:text="${game.getPoints()}"></h2>
+                        </div>
+
                     </div>
                 </div>
                 <div class="row justify-content-center mt-4 mb-2">
@@ -119,6 +124,7 @@
     apiUrl = baseUrlParts[0] + "api/questions" + baseUrlParts[1];
     let questions;
     let currentQuestion = 0;
+    let points = 0;
 
     axios.get(apiUrl).then(response => {
         questions = response;
@@ -130,8 +136,11 @@
         if(questions.data[currentQuestion].correct_answer.text.toLowerCase()===response.toLowerCase()) {
             $('#correctModal').modal('toggle');
             currentQuestion++;
+            points++;
+            document.getElementById("points").innerHTML = points.toString();
             if(currentQuestion === 3){
                 document.getElementById("finish").hidden = false;
+
             }else{
                 nextQuestion();
             }
