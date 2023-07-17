@@ -31,8 +31,8 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public Game findByTitle(String title) {
-        return gameRepository.findByTitle(title);
+    public List<Game> findAllByTitle(String title) {
+        return gameRepository.findAllByTitleContainingIgnoreCase(title);
     }
 
     @Override

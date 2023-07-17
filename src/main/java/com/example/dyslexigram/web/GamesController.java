@@ -37,7 +37,8 @@ public class GamesController {
     }
 
     @GetMapping()
-    public String getGamesPage(Model model,
+    public String getGamesPage(@RequestParam(required = false) String searchTerm,
+                               Model model,
                                HttpServletRequest request) {
 
         // Check if nickname exists in cookie
@@ -57,7 +58,13 @@ public class GamesController {
             return "redirect:/login";
         }
 
-        List<Game> games = this.gameService.listAllGames();
+        List<Game> games;
+
+        if(searchTerm == null) {
+            games = this.gameService.listAllGames();
+        } else {
+            games = this.gameService.findAllByTitle(searchTerm);
+        }
 
         model.addAttribute("link", 2);
         model.addAttribute("games", games);
