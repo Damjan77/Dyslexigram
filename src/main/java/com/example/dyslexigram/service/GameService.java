@@ -13,7 +13,7 @@ public interface GameService {
 
     Game findById(Long id);
 
-    Game findByTitle(String title);
+    List<Game> findAllByTitle(String title);
 
     Optional<Game> save(String title, String description, Level level, String imgUrl, List<Question> questions);
 
