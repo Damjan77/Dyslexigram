@@ -16,8 +16,11 @@
 
 <section id="banner">
     <div class="container">
+
+
+
         <div class="row py-3">
-            <button type="button" class="btn btn-secondary btn-block btn-lg py-2 px-3" id="gameTitle" th:text="${game.getTitle()}" disabled></button>
+            <button class="btn btn-secondary btn-block btn-lg py-2 px-3" id="gameTitle" th:text="${game.getTitle()}" disabled></button>
         </div>
 
         <div class="row d-flex justify-content-center my-3">
@@ -55,7 +58,9 @@
                 </div>
                 <div class="row justify-content-center mt-3 mb-2">
                     <div class="col col-lg-2">
-                        <a href="#" type="button" class="btn btn-lg btn-success btn-default w-100 response" id="finish" hidden>Заврши</a>
+
+                        <a href="/profile" type="button" class="btn btn-lg btn-success btn-default w-100 response" id="finish" hidden>Заврши</a>
+
                     </div>
                 </div>
             </div>
