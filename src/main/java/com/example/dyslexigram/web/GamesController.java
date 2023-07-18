@@ -36,6 +36,12 @@ public class GamesController {
         return "games";
     }
 
+    @GetMapping("/finishGame")
+    public String getInfoPage(Model model) {
+        model.addAttribute("link", "/profile.html");
+        return "redirect:/profile.html";
+    }
+
     @GetMapping()
     public String getGamesPage(@RequestParam(required = false) String searchTerm,
                                Model model,
@@ -105,6 +111,10 @@ public class GamesController {
     }
 
 
+    @GetMapping("/targetPage")
+    public String targetPage() {
+        return "targetPage";
+    }
 
 
 }
