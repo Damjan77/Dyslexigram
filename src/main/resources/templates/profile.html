@@ -25,9 +25,13 @@
         <div class="row d-flex justify-content-center my-3 py-2 px-3 bg-light" th:each="game : ${games}">
 
             <div class="col-md-3 d-flex">
-                <div class="row justify-content-center">
-                    <img src="../images/user4.png" alt="" class="img-fluid w-25">
-                    <h5 class="pt-3" id="player_name" th:text="${user.getNickname()}"></h5>
+                <div class="row justify-content-center align-content-center">
+                    <div class="col-3">
+                        <img src="../images/profile-user.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <h5 class="pt-3" id="player_name" th:text="${user.getNickname()}"></h5>
+                    </div>
                 </div>
             </div>
 
