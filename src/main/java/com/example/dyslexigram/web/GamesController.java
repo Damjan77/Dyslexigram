@@ -38,6 +38,7 @@ public class GamesController {
 
     @GetMapping("/finishGame")
     public String getInfoPage(Model model) {
+        model.addAttribute("points", 15);
         model.addAttribute("link", "/profile.html");
         return "redirect:/profile.html";
     }
@@ -75,7 +76,7 @@ public class GamesController {
         model.addAttribute("link", 2);
         model.addAttribute("games", games);
 
-        User user = new User(nickname.replace("+", " "), 0);
+        User user = new User(nickname.replace("+", " "));
         model.addAttribute("user", user);
 
         return "games";
@@ -95,7 +96,7 @@ public class GamesController {
         cookie.setPath("/"); //global cookie
         response.addCookie(cookie);
 
-        this.usersService.save(user, 0);
+        this.usersService.save(user);
         model.addAttribute("link", 2);
         return "redirect:/games";
     }

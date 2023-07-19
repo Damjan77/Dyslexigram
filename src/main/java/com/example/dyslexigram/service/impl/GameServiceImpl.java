@@ -36,19 +36,20 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public Optional<Game> save(String title, String description, Level level, String imgUrl, List<Question> questions) {
-        Game game = new Game(title,description,level,imgUrl,questions);
+    public Optional<Game> save(String title, String description, Level level, String imgUrl, int points, List<Question> questions) {
+        Game game = new Game(title,description,level,imgUrl,points,questions);
 
         return Optional.of(gameRepository.save(game));
     }
 
     @Override
-    public Game edit(Long id, String title, String description, Level level, String imgUrl, List<Question> questions) {
+    public Game edit(Long id, String title, String description, Level level, String imgUrl, int points, List<Question> questions) {
         Game game = this.findById(id);
         game.setTitle(title);
         game.setDescription(description);
         game.setLevel(level);
         game.setImg_url(imgUrl);
+        game.setPoints(points);
         game.setQuestions(questions);
 
         return this.gameRepository.save(game);
@@ -58,7 +59,6 @@ public class GameServiceImpl implements GameService {
     public Game delete(Long id) {
         Game game = findById(id);
         this.gameRepository.delete(game);
-
         return game;
     }
 }

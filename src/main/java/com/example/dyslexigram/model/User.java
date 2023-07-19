@@ -16,13 +16,13 @@ public class User {
     @GeneratedValue
     private Long id;
     private String nickname;
-    private int total_points;
+//    @OneToMany
+//    private List<UserGamePoints> userGamePointsList = new ArrayList<>();
 
     public User() {
     }
 
-    public User(String nickname, int total_points) {
+    public User(String nickname) {
         this.nickname = nickname;
-        this.total_points = total_points;
     }
 }

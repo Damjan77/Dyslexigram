@@ -58,8 +58,14 @@ public class DataInitializer {
 
         Game game1level1 = new Game("Погоди ја буквата",
                 "Играта се состои од неколку зборови на кои им недостасуваат букви. Можете ли да погодете коjа буква недостасува?",
-                Level.Ниво1, "/images/game.jpg", questionListG1L1);
+                Level.Ниво1, "/images/game.jpg", 3, questionListG1L1);
 
+//        userGamePoints.setGame(game1level1);
+////        userGamePoints.setUser(user);
+//        userGamePoints.setPoints(15);
+//        game1level1.getUserGamePointsList().add(userGamePoints);
+//        //user.getUserGamePointsList().add(userGamePoints);
+//        //usersRepository.save(user);
         this.gameRepository.save(game1level1);
 
 
@@ -88,8 +94,14 @@ public class DataInitializer {
 
         Game game2level1 = new Game("Погоди го бројот",
                 "Играта се состои од дадени броеви. Ваша задача е да погодите како се пишува точно.",
-                Level.Ниво1, "/images/number-game.jpg", questionListG2L1);
+                Level.Ниво1, "/images/number-game.jpg", 3,  questionListG2L1);
 
+//        userGamePoints.setGame(game2level1);
+////        userGamePoints.setUser(user);
+//        userGamePoints.setPoints(15);
+//        game2level1.getUserGamePointsList().add(userGamePoints);
+////        user.getUserGamePointsList().add(userGamePoints);
+////        usersRepository.save(user);
         this.gameRepository.save(game2level1);
 
         // Игра 3
@@ -117,8 +129,14 @@ public class DataInitializer {
 
         Game game3level1 = new Game("Погоди ја бојата",
                 "Играта се состои од неколку слики со бои. Можете ли да погодите за коjа боја станува збор?",
-                Level.Ниво1, "/images/color.jpg", questionListG3L1);
+                Level.Ниво1, "/images/color.jpg", 3, questionListG3L1);
 
+//        userGamePoints.setGame(game3level1);
+////        userGamePoints.setUser(user);
+//        userGamePoints.setPoints(15);
+//        game3level1.getUserGamePointsList().add(userGamePoints);
+////        user.getUserGamePointsList().add(userGamePoints);
+////        usersRepository.save(user);
         this.gameRepository.save(game3level1);
 
 
@@ -149,8 +167,14 @@ public class DataInitializer {
 
         Game game1level2 = new Game("Реши го математичкиот израз",
                 "Играта се состои од неколку математички изрази кои од вас се бара да ги решите.",
-                Level.Ниво2, "/images/mathGame.jpg", questionListG1L2);
+                Level.Ниво2, "/images/mathGame.jpg", 6, questionListG1L2);
 
+//        userGamePoints.setGame(game1level2);
+////        userGamePoints.setUser(user);
+//        userGamePoints.setPoints(15);
+//        game1level2.getUserGamePointsList().add(userGamePoints);
+////        user.getUserGamePointsList().add(userGamePoints);
+////        usersRepository.save(user);
         this.gameRepository.save(game1level2);
 
         // Игра 2
@@ -182,8 +206,14 @@ public class DataInitializer {
 
         Game game2level2 = new Game("Добиј го точниот резултат",
                 "Играта се состои од неколку математички изрази во кои недостасува некој број. Пронајдете го.",
-                Level.Ниво2, "/images/missingNumber.jpg", questionListG2L2);
+                Level.Ниво2, "/images/missingNumber.jpg", 6, questionListG2L2);
 
+//        userGamePoints.setGame(game2level2);
+////        userGamePoints.setUser(user);
+//        userGamePoints.setPoints(15);
+//        game2level2.getUserGamePointsList().add(userGamePoints);
+////        user.getUserGamePointsList().add(userGamePoints);
+////        usersRepository.save(user);
         this.gameRepository.save(game2level2);
 
         // Игра 3
@@ -210,8 +240,14 @@ public class DataInitializer {
         List<Question> questionListG3L2 = new ArrayList<>(Arrays.asList(question1G3L2, question2G3L2, question3G3L2));
 
         Game game3level2 = new Game("Погоди го изразот", "Играта се состои од даден резултат за кој вие треба да го погодите соодветниот израз.",
-                Level.Ниво2, "/images/single-digit-subtraction-big.png", questionListG3L2);
+                Level.Ниво2, "/images/single-digit-subtraction-big.png", 6, questionListG3L2);
 
+//        userGamePoints.setGame(game3level2);
+////        userGamePoints.setUser(user);
+//        userGamePoints.setPoints(15);
+//        game3level2.getUserGamePointsList().add(userGamePoints);
+////        user.getUserGamePointsList().add(userGamePoints);
+////        usersRepository.save(user);
         this.gameRepository.save(game3level2);
 
 
@@ -243,8 +279,14 @@ public class DataInitializer {
 
         Game game1level3 = new Game("Погоди ја аритметичката операција",
                 "Вашата задача е да погодите која е бараната аритметичка операција.",
-                Level.Ниво3, "/images/Arithmetic-Operations.png", questionListG1L3);
+                Level.Ниво3, "/images/Arithmetic-Operations.png", 9, questionListG1L3);
 
+//        userGamePoints.setGame(game1level3);
+////        userGamePoints.setUser(user);
+//        userGamePoints.setPoints(15);
+//        game1level3.getUserGamePointsList().add(userGamePoints);
+////        user.getUserGamePointsList().add(userGamePoints);
+////        usersRepository.save(user);
         this.gameRepository.save(game1level3);
 
         //Игра 2
@@ -285,8 +327,14 @@ public class DataInitializer {
 
         Game game2level3 = new Game("Одговори ги прашањата",
                 "Дадени се соодветни прашања. Ваша задача е да ги одговорите соодветните прашања.",
-                Level.Ниво3, "/images/questions.png", questionListG2L3);
+                Level.Ниво3, "/images/questions.png", 9, questionListG2L3);
 
+//        userGamePoints.setGame(game2level3);
+////        userGamePoints.setUser(user);
+//        userGamePoints.setPoints(15);
+//        game2level3.getUserGamePointsList().add(userGamePoints);
+////        user.getUserGamePointsList().add(userGamePoints);
+////        usersRepository.save(user);
         this.gameRepository.save(game2level3);
 
         //Игра 3
@@ -315,8 +363,14 @@ public class DataInitializer {
 
         Game game3level3 = new Game("Погоди што има на сликата",
                 "Играта се состои од неколку слики. Можете ли да погодите што има на сликата?",
-                Level.Ниво3, "/images/game_picture.jpg", questionListG3L3);
+                Level.Ниво3, "/images/game_picture.jpg", 9, questionListG3L3);
 
+//        userGamePoints.setGame(game3level3);
+////        userGamePoints.setUser(user);
+//        userGamePoints.setPoints(15);
+//        game3level3.getUserGamePointsList().add(userGamePoints);
+////        user.getUserGamePointsList().add(userGamePoints);
+////        usersRepository.save(user);
         this.gameRepository.save(game3level3);
     }
 }

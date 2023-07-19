@@ -24,6 +24,9 @@ public class Game {
     @ManyToMany
     private List<Question> questions;
 
+//    @OneToMany
+//    private List<UserGamePoints> userGamePointsList = new ArrayList<>();
+
     public Game() {}
 
     public Game(String title, String description, Level level, String img_url, List<Question> questions) {
@@ -34,7 +37,16 @@ public class Game {
         this.questions = questions;
     }
 
-    public Game(String title, String description, Level level, String img_url, int points, List<Question> questions) {
+//    public Game(String title, String description, Level level, String img_url, List<Question> questions, List<UserGamePoints> userGamePointsList) {
+//        this.title = title;
+//        Description = description;
+//        this.level = level;
+//        this.img_url = img_url;
+//        this.questions = questions;
+//        this.userGamePointsList = userGamePointsList;
+//    }
+
+        public Game(String title, String description, Level level, String img_url, int points, List<Question> questions) {
         this.title = title;
         Description = description;
         this.level = level;

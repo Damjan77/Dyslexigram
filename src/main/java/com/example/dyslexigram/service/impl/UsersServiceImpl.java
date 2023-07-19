@@ -35,18 +35,16 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public Optional<User> save(String nickname, int total_points) {
-        User userTosave = new User(nickname,total_points);
+    public Optional<User> save(String nickname) {
+        User userTosave = new User(nickname);
 
         return Optional.of(this.usersRepository.save(userTosave));
     }
 
     @Override
-    public User edit(Long id, String nickname, int total_points) {
+    public User edit(Long id, String nickname) {
         User userToEdit = this.findById(id);
         userToEdit.setNickname(nickname);
-        userToEdit.setTotal_points(total_points);
-
         return this.usersRepository.save(userToEdit);
     }
 
