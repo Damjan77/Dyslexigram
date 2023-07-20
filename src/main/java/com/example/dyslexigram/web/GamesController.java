@@ -73,11 +73,14 @@ public class GamesController {
             games = this.gameService.findAllByTitle(searchTerm);
         }
 
+        User user = new User(nickname.replace("+", " "));
+        model.addAttribute("user", user);
         model.addAttribute("link", 2);
         model.addAttribute("games", games);
 
-        User user = new User(nickname.replace("+", " "));
-        model.addAttribute("user", user);
+        if(!this.usersService.userExists(nickname.replace("+", " "))) {
+            this.usersService.save(nickname.replace("+", " "));
+        }
 
         return "games";
     }

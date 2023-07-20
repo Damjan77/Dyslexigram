@@ -18,4 +18,6 @@ public interface UsersService {
     User edit(Long id, String nickname);
 
     void deleteUser(Long id);
+
+    boolean userExists(String nickname);
 }
