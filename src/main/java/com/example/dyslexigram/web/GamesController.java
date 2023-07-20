@@ -114,10 +114,13 @@ public class GamesController {
         return "game";
     }
 
+    @GetMapping("/finishGame/{gameId}")
+    public String finishGame(@PathVariable Long gameId) {
+        Game game = this.gameService.findById(gameId);
+        User user = this.usersService.listAllUsers().get(0);
 
-    @GetMapping("/targetPage")
-    public String targetPage() {
-        return "targetPage";
+        //TODO: create saveFinishedGame(User user, Game game) in UserService and call it here
+        return "redirect:/profile";
     }
 
 
