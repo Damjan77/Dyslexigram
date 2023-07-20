@@ -141,7 +141,7 @@
         if(questions.data[currentQuestion].correct_answer.text.toLowerCase()===response.toLowerCase()) {
             $('#correctModal').modal('toggle');
             currentQuestion++;
-            points++;
+            points+=5;
             document.getElementById("points").innerHTML = points.toString();
             if(currentQuestion === 3){
                 document.getElementById("finish").hidden = false;
