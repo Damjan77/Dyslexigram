@@ -18,9 +18,6 @@ public class User {
 
     @ManyToMany
     private List<Game> finishedGames;
-//    @OneToMany
-//    private List<UserGamePoints> userGamePointsList = new ArrayList<>();
-
 
     public User() {
     }

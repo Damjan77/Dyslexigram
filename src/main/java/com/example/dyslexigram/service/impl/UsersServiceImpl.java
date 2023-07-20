@@ -1,5 +1,6 @@
 package com.example.dyslexigram.service.impl;
 
+import com.example.dyslexigram.model.Game;
 import com.example.dyslexigram.model.User;
 import com.example.dyslexigram.model.exceptions.InvalidUserIdException;
 import com.example.dyslexigram.model.exceptions.UserNotFoundException;
@@ -58,5 +59,13 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public boolean userExists(String nickname) {
         return this.usersRepository.findByNickname(nickname).isPresent();
+    }
+
+    @Override
+    public void saveFinishedGame(User user, Game game) { //ALELUJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        List<Game> finishedGamesList = user.getFinishedGames();
+        finishedGamesList.add(game);
+        user.setFinishedGames(finishedGamesList);
+        this.usersRepository.save(user);
     }
 }

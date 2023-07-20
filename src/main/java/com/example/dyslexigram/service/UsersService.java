@@ -1,5 +1,6 @@
 package com.example.dyslexigram.service;
 
+import com.example.dyslexigram.model.Game;
 import com.example.dyslexigram.model.User;
 
 import java.util.List;
@@ -20,4 +21,6 @@ public interface UsersService {
     void deleteUser(Long id);
 
     boolean userExists(String nickname);
+
+    void saveFinishedGame(User user, Game game);
 }

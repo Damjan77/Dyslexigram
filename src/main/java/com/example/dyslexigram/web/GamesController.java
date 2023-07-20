@@ -67,7 +67,7 @@ public class GamesController {
 
         List<Game> games;
 
-        if(searchTerm == null) {
+        if (searchTerm == null) {
             games = this.gameService.listAllGames();
         } else {
             games = this.gameService.findAllByTitle(searchTerm);
@@ -78,10 +78,9 @@ public class GamesController {
         model.addAttribute("link", 2);
         model.addAttribute("games", games);
 
-        if(!this.usersService.userExists(nickname.replace("+", " "))) {
+        if (!this.usersService.userExists(nickname.replace("+", " "))) {
             this.usersService.save(nickname.replace("+", " "));
         }
-
         return "games";
     }
 
@@ -115,11 +114,12 @@ public class GamesController {
     }
 
     @GetMapping("/finishGame/{gameId}")
-    public String finishGame(@PathVariable Long gameId) {
+    public String finishGame(@PathVariable Long gameId, boolean isFinished) {
         Game game = this.gameService.findById(gameId);
         User user = this.usersService.listAllUsers().get(0);
 
-        //TODO: create saveFinishedGame(User user, Game game) in UserService and call it here
+        this.usersService.saveFinishedGame(user, game);
+
         return "redirect:/profile";
     }
 
