@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -22,6 +23,26 @@ public class GamesController {
 
     private final UsersService usersService;
     private final GameService gameService;
+    private List<Game> games = new ArrayList<>(); // Lista so igri
+
+    @PostMapping("/checkGame")
+    public String checkGame(@RequestBody String gameName) {
+        // Proverka dali igrata postoi vo listata
+        boolean gameExists = games.stream().anyMatch(game -> game.getTitle().equals(gameName));
+
+        if (gameExists) {
+            // Igrata postoi, dodavanje na poeni
+            for (Game game : games) {
+                if (game.getTitle().equals(gameName)) {
+                    game.setPoints(game.getPoints() + 15);
+                    break;
+                }
+            }
+            return "Igrata postoi. Dodadeni se 15 poeni.";
+        } else {
+            return "Igrata ne postoi.";
+        }
+    }
 
     public GamesController(UsersService usersService, GameService gameService) {
         this.usersService = usersService;
