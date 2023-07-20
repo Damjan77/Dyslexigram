@@ -54,4 +54,9 @@ public class UsersServiceImpl implements UsersService {
         if(id == null) throw new IllegalArgumentException();
         this.usersRepository.deleteById(id);
     }
+
+    @Override
+    public boolean userExists(String nickname) {
+        return this.usersRepository.findByNickname(nickname).isPresent();
+    }
 }
