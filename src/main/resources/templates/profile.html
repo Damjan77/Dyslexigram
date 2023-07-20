@@ -45,8 +45,9 @@
             <div class="col-md-3 pt-3">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-3 d-flex justify-content-center align-items-center">
+                        <h5><span th:text="${user.finishedGames.contains(game) ? '15' : '0'}"></span></h5>
                         <img src="../images/star.png" alt="star-image" width="30px" style="margin-right: 10px;">
-                        <h5 id="points_name" th:text="${game.getPoints()}"></h5>
+
                     </div>
                 </div>
             </div>
