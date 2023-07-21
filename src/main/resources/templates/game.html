@@ -29,14 +29,17 @@
                     <div class="py-5">
                         <h1 id="text_question"></h1>
                         <img id="image_question" alt="question-image" hidden>
-                        <div class="d-flex justify-content-center">
-                            <h2>Поени: </h2>
-                            <h2 id="points">0</h2>
+                        <div class="d-flex justify-content-center mt-4">
+                            <button class="p-2" disabled style="border-radius: 10px">
+                                Поени: <span id="points">0</span>
+                            </button>
+<!--                            <h2>Поени: </h2>-->
+<!--                            <h2 id="points">0</h2>-->
                         </div>
 
                     </div>
                 </div>
-                <div class="row justify-content-center mt-4 mb-2">
+                <div class="row justify-content-center mt-3 mb-2">
                     <div class="col col-lg-5">
                         <button type="button" class="btn btn-lg btn-primary btn-default w-100 response" id="ans1"></button>
                     </div>
@@ -59,7 +62,7 @@
                 <div class="row justify-content-center mt-3 mb-2">
                     <div class="col col-lg-2">
 
-                        <a th:href="@{'/games/finishGame/{gameId}' (gameId=${game.getId})}" type="button" class="btn btn-lg btn-success btn-default w-100 response" id="finish" hidden>Заврши</a>
+                        <a th:href="@{'/games/finishGame/{gameId}' (gameId=${game.getId})}" type="button" class="btn btn-lg btn-outline-success btn-default w-100 response" id="finish" hidden>Заврши</a>
 
                     </div>
                 </div>
